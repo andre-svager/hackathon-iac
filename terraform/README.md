@@ -90,24 +90,12 @@ Add these secrets in your GitHub repository settings (Settings → Secrets and v
 7. Apply (only on main branch pushes)
 
 ## S3 Backend Configuration
-
-Ensure `backend.tf` is configured with your S3 bucket name:
-
-```hcl
-terraform {
-  backend "s3" {
-    bucket         = "your-bucket-name"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-  }
-}
-```
+Ensure `backend.tf` is configured with your S3 bucket name
 
 ## Required Variables
 
-Add 4 secrets in GitHub repo settings:
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-NGO_DB_PASSWORD
-DONATION_DB_PASSWORD
+Add the following secrets in GitHub repo settings:
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- NGO_DB_PASSWORD
+- DONATION_DB_PASSWORD
