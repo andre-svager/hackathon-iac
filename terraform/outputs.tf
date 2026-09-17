@@ -38,3 +38,18 @@ output "ssm_parameter_prefix" {
   description = "Read parameters from here in the GitOps repo, e.g. aws ssm get-parameter --name <prefix>/rds/ngo-db-endpoint"
   value       = "/${var.project_name}/${var.environment}"
 }
+
+output "github_actions_role_arn" {
+  description = "ARN of the GitHub Actions IAM role for GitOps deployment"
+  value       = module.github_actions_iam.role_arn
+}
+
+output "github_actions_role_name" {
+  description = "Name of the GitHub Actions IAM role"
+  value       = module.github_actions_iam.role_name
+}
+
+output "github_actions_oidc_provider_arn" {
+  description = "ARN of the GitHub OIDC provider"
+  value       = module.github_actions_iam.oidc_provider_arn
+}

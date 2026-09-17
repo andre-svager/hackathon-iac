@@ -123,3 +123,18 @@ module "ssm" {
     "ecr/volunteer-service-url"  = module.ecr.repository_urls["volunteer-service"]
   }
 }
+
+# GitHub Actions IAM role for GitOps deployment
+module "github_actions_iam" {
+  source = "./modules/github-actions-iam"
+
+  github_organization   = var.github_organization
+  github_repository     = var.github_repository
+  aws_account_id        = var.aws_account_id
+  aws_region            = var.aws_region
+  eks_cluster_name      = module.eks.cluster_name
+  ecr_repository_names = module.ecr.repository_names
+  ssm_parameter_prefix  = "/${var.project_name}/${var.environment}"
+  secrets_manager_prefix = "${var.project_name}/${var.environment}"
+  tags                  = local.common_tags
+}

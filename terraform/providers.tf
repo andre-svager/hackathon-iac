@@ -7,12 +7,12 @@ terraform {
       version = "~> 5.0"
     }
   }
-  backend "s3" {
-    bucket         = "solidarytech-terraform-state-621996700064"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-  }
+#  backend "s3" {
+#    bucket         = "solidarytech-terraform-state-621996700064"
+#    key            = "terraform.tfstate"
+#    region         = "us-east-1"
+#    encrypt        = true
+#  }
 }
 
 provider "aws" {

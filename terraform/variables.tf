@@ -137,3 +137,23 @@ variable "dynamodb_table_name" {
   type    = string
   default = "SolidaryTechVolunteers"
 }
+
+# ---------- GitHub Actions IAM ----------
+
+variable "github_organization" {
+  description = "GitHub organization name for OIDC trust"
+  type        = string
+  default     = "andre-svager"
+}
+
+variable "github_repository" {
+  description = "GitHub repository name for OIDC trust"
+  type        = string
+  default     = "hackathon-gitops"
+}
+
+variable "aws_account_id" {
+  description = "AWS account ID"
+  type        = string
+  default     = "621996700064"
+}
