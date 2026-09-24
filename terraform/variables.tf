@@ -59,7 +59,7 @@ variable "eks_cluster_version" {
 variable "eks_node_instance_types" {
   description = "EC2 instance types for the EKS managed node group (free tier: t3.micro)"
   type        = list(string)
-  default     = ["t3.micro"]
+  default     = ["t3.small"]
 }
 
 variable "eks_node_desired_size" {

@@ -24,6 +24,8 @@ module "vpc" {
 module "security_groups" {
   source = "./modules/security-groups"
 
+  eks_cluster_security_group_id = module.eks.cluster_security_group_id
+
   name   = local.name
   vpc_id = module.vpc.vpc_id
   tags   = local.common_tags

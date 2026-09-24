@@ -19,7 +19,7 @@ resource "aws_db_instance" "this" {
   password = var.password
 
   db_subnet_group_name   = aws_db_subnet_group.this.name
-  vpc_security_group_ids = var.vpc_security_group_ids
+  vpc_security_group_ids = var.vpc_security_group_ids   # was module.security_groups.rds_sg_id
 
   multi_az                = var.multi_az
   publicly_accessible     = false
